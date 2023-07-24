@@ -94,7 +94,7 @@ const useWeather = () => {
   // LẤY THÔNG TIN THỜI TIẾT HIỆN TẠI
   useEffect(() => {
     setLoading(true);
-    getTemplate(`data/2.5/weather?q=${searchAddress}&units=metric`)
+    getTemplate(`data/2.5/weather?q=${tmpValue}&units=metric`)
       .then((res) => {
         setLoading(false);
         setWeatherDetail(res);
