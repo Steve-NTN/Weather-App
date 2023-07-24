@@ -7,11 +7,17 @@ import "@/styles/Weather.styles.scss";
 type Props = {};
 
 const Weather = (props: Props) => {
-  const { loading, weatherDetail, searchAddress, onChangeSearchAddress } =
-    useWeather();
+  const {
+    nextWeathers,
+    subWeatherInformations,
+    loading,
+    weatherDetail,
+    searchAddress,
+    onChangeSearchAddress,
+  } = useWeather();
 
   let { name, sys, main, weather } = weatherDetail;
-  let { temp, temp_min, temp_max } = main;
+  let { temp } = main;
   let { icon, description, main: mainWeather } = weather[0];
 
   return (
@@ -27,20 +33,17 @@ const Weather = (props: Props) => {
         />
 
         {name && (
-          <div className="rounded my-6 py-4">
-            <div className="flex justify-between text-white">
+          <div className="rounded my-6 py-4 text-white">
+            <div className="flex justify-between">
+              {/* ĐỊA CHỈ VÀ NHIỆT ĐỘ */}
               <div>
-                {/* ĐỊA CHỈ */}
                 <h5 className="font-bold text-2xl">
                   {name} <span className="text-sm">({sys.country})</span>
                 </h5>
-
-                {/* NHIỆT ĐỘ */}
-                <p className="font-bold text-6xl">
-                  {temp}&deg;C
-                </p>
+                <p className="font-bold text-6xl">{temp}&deg;C</p>
               </div>
 
+              {/* ẢNH VÀ THỜI TIẾT HIỆN TẠI */}
               <div className="text-center">
                 <img
                   src={getWeatherImageUrl(icon)}
@@ -51,6 +54,34 @@ const Weather = (props: Props) => {
                 <p className="font-bold">{mainWeather}</p>
                 <p className="font-bold">{description}</p>
               </div>
+            </div>
+
+            {/* THÔNG TIN PHỤ */}
+            <div className="text-center my-4">
+              {subWeatherInformations.map((infor, idx) => (
+                <p>
+                  <span className="font-bold">
+                    {infor.label && `${infor.label}: `}
+                  </span>
+                  <>{infor.value}</>
+                </p>
+              ))}
+            </div>
+
+            {/* THÔNG TIN MẤY NGÀY TIẾP */}
+            <div className="grid grid-cols-4 md:grid-cols-6 gap-2 mt-6">
+              {nextWeathers.map((nexWeather) => {
+                let { main: weatherMain, weather } = nexWeather;
+                let { temp } = weatherMain;
+                let { icon, main } = weather[0];
+                return (
+                  <div className="weather-box text-center">
+                    <p className="text-xl font-bold">{temp}</p>
+                    <img src={getWeatherImageUrl(icon)} alt="img" className="mx-auto"/>
+                    <p>{main}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         )}
