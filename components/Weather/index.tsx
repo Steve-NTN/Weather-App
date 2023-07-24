@@ -3,6 +3,7 @@ import React from "react";
 import useWeather from "./useWeather";
 import { getWeatherImageUrl } from "@/utils/imageHelpers";
 import "@/styles/Weather.styles.scss";
+import Image from "next/image";
 
 type Props = {};
 
@@ -45,10 +46,9 @@ const Weather = (props: Props) => {
 
               {/* ẢNH VÀ THỜI TIẾT HIỆN TẠI */}
               <div className="text-center">
-                <img
+                <Image
                   src={getWeatherImageUrl(icon)}
                   alt="img"
-                  width="100%"
                   className="weather-icon"
                 />
                 <p className="font-bold">{mainWeather}</p>
@@ -59,7 +59,7 @@ const Weather = (props: Props) => {
             {/* THÔNG TIN PHỤ */}
             <div className="text-center my-4">
               {subWeatherInformations.map((infor, idx) => (
-                <p>
+                <p key={idx}>
                   <span className="font-bold">
                     {infor.label && `${infor.label}: `}
                   </span>
@@ -70,14 +70,18 @@ const Weather = (props: Props) => {
 
             {/* THÔNG TIN MẤY NGÀY TIẾP */}
             <div className="grid grid-cols-4 md:grid-cols-6 gap-2 mt-6">
-              {nextWeathers.map((nexWeather) => {
+              {nextWeathers.map((nexWeather, id) => {
                 let { main: weatherMain, weather } = nexWeather;
                 let { temp } = weatherMain;
                 let { icon, main } = weather[0];
                 return (
-                  <div className="weather-box text-center">
+                  <div className="weather-box text-center" key={id}>
                     <p className="text-xl font-bold">{temp}</p>
-                    <img src={getWeatherImageUrl(icon)} alt="img" className="mx-auto"/>
+                    <Image
+                      src={getWeatherImageUrl(icon)}
+                      alt="img"
+                      className="mx-auto"
+                    />
                     <p>{main}</p>
                   </div>
                 );

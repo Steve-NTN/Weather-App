@@ -10,7 +10,7 @@ const Page = (props: Props) => {
 
   useEffect(() => {
     push("/weather");
-  }, []);
+  }, [push]);
 
   return <></>;
 };
