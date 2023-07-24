@@ -8,7 +8,7 @@ const Page = (props: Props) => {
     <>
       <Head>
         <meta property="og:title" content="Weather App" />
-        <meta property="og:description" content="Weather App" />
+        <meta property="og:description" content="Weather App made by NTN" />
         <meta property="og:image" content="../assets/imgs/sunset.jpg" />
       </Head>
       <Weather />
