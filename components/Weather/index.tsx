@@ -50,6 +50,8 @@ const Weather = (props: Props) => {
                   src={getWeatherImageUrl(icon)}
                   alt="img"
                   className="weather-icon"
+                  width={88}
+                  height={32}
                 />
                 <p className="font-bold">{mainWeather}</p>
                 <p className="font-bold">{description}</p>
@@ -81,6 +83,8 @@ const Weather = (props: Props) => {
                       src={getWeatherImageUrl(icon)}
                       alt="img"
                       className="mx-auto"
+                      width={48}
+                      height={32}
                     />
                     <p>{main}</p>
                   </div>
