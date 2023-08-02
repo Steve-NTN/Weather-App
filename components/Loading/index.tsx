@@ -1,10 +1,16 @@
-import React from "react";
-
-type Props = {};
+type Props = {
+  center?: boolean;
+  className?: string;
+};
 
 const Loading = (props: Props) => {
+  let { center = false, className } = props;
   return (
-    <span className="h-screen fixed w-full flex justify-center items-center">
+    <span
+      className={`${
+        center ? "h-screen fixed" : ""
+      } w-full flex justify-center items-center ${className}`}
+    >
       <span className="animate-spin relative flex h-10 w-10 rounded-sm bg-purple-400 opacity-75"></span>
     </span>
   );

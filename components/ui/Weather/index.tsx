@@ -1,9 +1,8 @@
+import Image from "next/image";
 import Loading from "@/components/Loading";
-import React from "react";
 import useWeather from "./useWeather";
 import { getWeatherImageUrl } from "@/utils/imageHelpers";
 import "@/styles/Weather.styles.scss";
-import Image from "next/image";
 
 type Props = {};
 

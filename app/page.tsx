@@ -1,5 +1,9 @@
 import Page from "./home/page";
 
 export default function Home() {
-  return <Page />;
+  return (
+    <main>
+      <Page />
+    </main>
+  );
 }
