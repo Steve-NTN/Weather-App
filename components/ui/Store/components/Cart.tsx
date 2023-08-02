@@ -1,10 +1,55 @@
+import { useRouter } from "next/navigation";
+import { useAppSelector } from "@/store";
+import "@/styles/Cart.scss";
+import ChangeOrderQuantity from "./ChangeOrderQuantity";
 
-type Props = {}
+type Props = {};
 
 const Cart = (props: Props) => {
-  return (
-    <div>Cart</div>
-  )
-}
+  const { push } = useRouter();
+  const cartProducts = useAppSelector((state) => state.cartReducer.cart);
 
-export default Cart
+  // XỬ LÝ KHI BẤM THANH TOÁN
+  const onClickPayment = () => {
+    push("/store/checkout");
+  };
+
+  return (
+    <>
+      <div className="p-4">
+        {cartProducts.length < 1 && (
+          <p className="text-center text-sm my-4">Giỏ hàng trống</p>
+        )}
+
+        {cartProducts.map((product, idx) => (
+          <div
+            key={idx}
+            className="flex items-center justify-between cart-product gap-2 mb-4 border-b pb-4"
+          >
+            <div className="flex gap-2">
+              <img src={product?.img} alt="img" />
+              <div>
+                <p className="font-bold">{product.name}</p>
+                <p className="text-sm">x{product.quantity}</p>
+              </div>
+            </div>
+            <ChangeOrderQuantity product={product} />
+          </div>
+        ))}
+      </div>
+
+      {cartProducts.length > 0 && (
+        <div className="sticky bottom-0 text-center">
+          <button
+            className="bg-black text-white p-2 text-sm rounded"
+            onClick={onClickPayment}
+          >
+            Thanh toán
+          </button>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Cart;

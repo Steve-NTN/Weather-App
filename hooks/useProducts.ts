@@ -1,10 +1,11 @@
+import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 
 import { getTemplate } from "@/services/storeApi";
 import { ProductType } from "@/types";
-import { StoreContext } from "@/components/ui/Store";;
-
+import { StoreContext } from "@/components/ui/Store";
 const useProducts = () => {
+  const { push } = useRouter();
   const { productsFilter } = useContext(StoreContext);
   const [products, setProducts] = useState<ProductType[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -25,12 +26,16 @@ const useProducts = () => {
       .catch((err) => console.log(err));
   };
 
+  // XỬ LÝ KHI BẤM VÀO SẢN PHẨM
+  const onClickProduct = (product: ProductType) => {
+    push(`/store/${product.id}`);
+  };
 
   useEffect(() => {
     onFetchProducts();
   }, [productsFilter]);
 
-  return { products, loading };
+  return { products, loading, onClickProduct };
 };
 
 export default useProducts;

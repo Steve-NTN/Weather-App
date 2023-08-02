@@ -1,4 +1,4 @@
-import "./Footer.scss";
+import "@/styles/Footer.scss";
 import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 type Props = {};
 

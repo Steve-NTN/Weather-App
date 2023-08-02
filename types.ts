@@ -34,4 +34,5 @@ export type CartProductType = {
   name: string;
   quantity: number;
   price: number;
+  img: string;
 };

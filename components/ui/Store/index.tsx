@@ -3,13 +3,13 @@
 import useStore from "@/hooks/useStore";
 import {
   ContentContainer,
-  Footer,
   Header,
   ProductSearchBar,
   Products,
 } from "./components";
 import { createContext } from "react";
 import { ProductsFilterType } from "@/types";
+import Footer from "@/components/Footer";
 
 type Props = {};
 

@@ -1,0 +1,11 @@
+.cart-product {
+  img {
+    width: 88px;
+    height: 88px;
+    object-fit: "cover";
+    @media (max-width: 768px) {
+      width: 64px;
+      height: 64px;
+    }
+  }
+}

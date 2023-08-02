@@ -1,9 +1,9 @@
-import { ProductDetail } from "@/components";
+import { StoreCheckout } from "@/components";
 
 type Props = {};
 
 const Page = (props: Props) => {
-  return <ProductDetail />;
+  return <StoreCheckout />;
 };
 
 export default Page;

@@ -2,10 +2,10 @@ import { BsFillCartPlusFill } from "react-icons/bs";
 import { IoIosAddCircle, IoIosRemoveCircle } from "react-icons/io";
 import { useAppDispatch, useAppSelector } from "@/store";
 import { decrement, increment, productQtyInCartSelector } from "@/store/cart";
-import { ProductType } from "@/types";
+import { CartProductType, ProductType } from "@/types";
 
 type Props = {
-  product: ProductType;
+  product: CartProductType | ProductType;
 };
 
 const ChangeOrderQuantity = (props: Props) => {
@@ -30,7 +30,7 @@ const ChangeOrderQuantity = (props: Props) => {
   const iconStyle = "w-[24px] h-[24px]";
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center">
       {productQlt > 0 ? (
         <>
           <button
