@@ -15,7 +15,7 @@ const Footer = (props: Props) => {
         <div>
           <p className="title">NTN Store</p>
           <div className="content">
-            <p>"NTN store - the best store"</p>
+            <p>{"NTN store - the best store"}</p>
           </div>
         </div>
 

@@ -25,7 +25,7 @@ export const StoreContext = createContext<{
   setShowFilterBox: () => {}
 });
 
-export default function index({}: Props) {
+export default function Store({}: Props) {
   const { contextData } = useStore();
 
   return (
