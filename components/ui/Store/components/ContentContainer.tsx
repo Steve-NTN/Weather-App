@@ -1,5 +1,5 @@
 type Props = {
-  children: (string | JSX.Element)[];
+  children: string | JSX.Element | (string | JSX.Element)[];
   className: string | undefined;
 };
 

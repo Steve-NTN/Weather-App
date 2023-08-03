@@ -1,9 +1,9 @@
 import { ProductDetail } from "@/components";
 
-type Props = {};
+type Props = { params: { productId?: string } };
 
-const Page = (props: Props) => {
-  return <ProductDetail />;
+const Page = ({ params: { productId } }: Props) => {
+  return <ProductDetail {...{ productId }} />;
 };
 
 export default Page;

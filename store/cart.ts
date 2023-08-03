@@ -2,6 +2,10 @@ import { CartProductType, CartType } from "@/types";
 import { createSelector, createSlice } from "@reduxjs/toolkit";
 import { RootState } from ".";
 
+const setCartFunc = (cart = []) => {
+  localStorage.setItem("cart", JSON.stringify(cart));
+};
+
 const initialState: CartType = {
   cart: [],
 };
@@ -26,12 +30,14 @@ export const cartSlide = createSlice({
           quantity: 1,
         });
       }
+
+      setCartFunc(state.cart);
     },
     decrement: (state: any, action: any) => {
       const crtProduct = state.cart.find(
         (product: CartProductType) => product.id === action.payload.id
       );
-      if (crtProduct)
+      if (crtProduct) {
         state.cart = state.cart
           .map((product: CartProductType) =>
             product.id === action.payload.id
@@ -39,6 +45,12 @@ export const cartSlide = createSlice({
               : product
           )
           .filter((product: CartProductType) => product.quantity > 0);
+      }
+
+      setCartFunc(state.cart);
+    },
+    setCart: (state: any, action: any) => {
+      state.cart = action.payload;
     },
   },
 });
@@ -69,4 +81,4 @@ export const TotalPriceSelector = createSelector(
     )
 );
 
-export const { increment, decrement } = cartSlide.actions;
+export const { increment, decrement, setCart } = cartSlide.actions;

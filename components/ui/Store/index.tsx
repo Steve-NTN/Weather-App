@@ -10,6 +10,7 @@ import {
 import { createContext } from "react";
 import { ProductsFilterType } from "@/types";
 import Footer from "@/components/Footer";
+import useLocalStorage from "@/hooks/useLocalStorage";
 
 type Props = {};
 
@@ -22,11 +23,12 @@ export const StoreContext = createContext<{
   showFilterBox: false,
   productsFilter: { searchKey: "" },
   onChangeFilterField: () => {},
-  setShowFilterBox: () => {}
+  setShowFilterBox: () => {},
 });
 
 export default function Store({}: Props) {
   const { contextData } = useStore();
+  useLocalStorage();
 
   return (
     <StoreContext.Provider value={contextData}>

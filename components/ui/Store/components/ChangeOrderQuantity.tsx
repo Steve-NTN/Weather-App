@@ -5,7 +5,7 @@ import { decrement, increment, productQtyInCartSelector } from "@/store/cart";
 import { CartProductType, ProductType } from "@/types";
 
 type Props = {
-  product: CartProductType | ProductType;
+  product?: CartProductType | ProductType | any;
 };
 
 const ChangeOrderQuantity = (props: Props) => {
@@ -13,18 +13,22 @@ const ChangeOrderQuantity = (props: Props) => {
   const { product } = props;
 
   // XỬ LÝ THÊM VÀO GIỎ HÀNG
-  const onClickAddToCart = (product: any) => {
+  const onClickAddToCart = (e: any, product: any) => {
+    e?.stopPropagation();
     dispatch(increment(product));
   };
 
   // XỬ LÝ TRỪ SP
-  const onClickDecreamentProduct = (product: any) => {
+  const onClickDecreamentProduct = (e: any, product: any) => {
+    e?.stopPropagation();
     dispatch(decrement(product));
   };
 
   // SỐ LƯỢNG SẢN PHẨM TRONG GIỎ
   const productQlt =
-    useAppSelector((state) => productQtyInCartSelector(state, product.id)) || 0;
+    useAppSelector((state) =>
+      productQtyInCartSelector(state, product?.id || "")
+    ) || 0;
 
   const buttonStyle = "p-2 hover:bg-gray-200 rounded-full";
   const iconStyle = "w-[24px] h-[24px]";
@@ -35,14 +39,14 @@ const ChangeOrderQuantity = (props: Props) => {
         <>
           <button
             className={buttonStyle}
-            onClick={() => onClickAddToCart(product)}
+            onClick={(e) => onClickAddToCart(e, product)}
           >
             <IoIosAddCircle className={iconStyle} />
           </button>
           <span>{productQlt}</span>
           <button
             className={buttonStyle}
-            onClick={() => onClickDecreamentProduct(product)}
+            onClick={(e) => onClickDecreamentProduct(e, product)}
           >
             <IoIosRemoveCircle className={iconStyle} />
           </button>
@@ -50,7 +54,7 @@ const ChangeOrderQuantity = (props: Props) => {
       ) : (
         <button
           className={buttonStyle}
-          onClick={() => onClickAddToCart(product)}
+          onClick={(e) => onClickAddToCart(e, product)}
         >
           <BsFillCartPlusFill className={iconStyle} />
         </button>
