@@ -1,3 +1,5 @@
+"use client";
+
 import { Header } from "@/components";
 import { ContentContainer } from "../Store/components";
 import Footer from "@/components/Footer";
