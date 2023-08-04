@@ -6,16 +6,15 @@ type Props = {
 };
 
 const Information = (props: Props) => {
-  let {
-    productDetail: { name, category, description },
-  } = props;
+  let { productDetail } = props;
+  let { name, category, description } = productDetail;
   return (
     <div>
       <p className="text-xl font-bold">{name}</p>
       <p className="my-4">{category}</p>
       <p>{description}</p>
 
-      <ChangeOrderQuantity product={ProductDetail} />
+      <ChangeOrderQuantity product={productDetail} />
     </div>
   );
 };

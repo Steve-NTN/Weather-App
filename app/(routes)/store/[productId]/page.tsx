@@ -1,4 +1,5 @@
 import { ProductDetail } from "@/components";
+import { getProductDetail } from "@/lib/product";
 import { Metadata } from "next";
 
 type Props = { params: { productId?: string } };
@@ -11,11 +12,13 @@ export const metadata: Metadata = {
   },
 };
 
-const Page = (props: Props) => {
+const Page = async (props: Props) => {
   let {
     params: { productId },
   } = props;
-  return <ProductDetail {...{ productId }} />;
+
+  let productDetail = (await getProductDetail({ id: productId })).data;
+  return <ProductDetail {...{ productDetail }} />;
 };
 
 export default Page;

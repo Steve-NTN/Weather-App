@@ -4,14 +4,12 @@ import { Header } from "@/components";
 import { ContentContainer } from "../Store/components";
 import Footer from "@/components/Footer";
 import { Gallery, Information } from "./components";
-import useProductDetail from "@/hooks/useProductDetail";
 
 type Props = {
-  productId?: string;
+  productDetail?: any;
 };
 
-const ProductDetail = ({ productId }: Props) => {
-  const { productDetail } = useProductDetail({ productId });
+const ProductDetail = ({ productDetail }: Props) => {
   return (
     <div className="flex flex-col justify-between min-h-screen">
       <Header />
@@ -23,8 +21,6 @@ const ProductDetail = ({ productId }: Props) => {
           <Information {...{ productDetail }} />
         </div>
 
-        {/* DANH SÁCH SẢN PHẨM */}
-        {/* <Products className="my-4" /> */}
       </ContentContainer>
 
       <Footer />

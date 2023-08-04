@@ -12,11 +12,13 @@ type Props = {
 export default function Header(props: Props) {
   const { hiddenCart } = props;
   const totalProductQuantity = useAppSelector(totalCartProductsSelector);
-  const { showCart, setshowCart, onClickCart } = useHeader();
+  const { showCart, setshowCart, onClickCart, onClickLogo } = useHeader();
 
   return (
     <div className="p-4 gap-2 flex justify-between align-center border-b">
-      <p className="font-bold text-3xl md:text-4xl">NTN Store</p>
+      <p className="font-bold text-3xl md:text-4xl cursor-pointer" onClick={onClickLogo}>
+        NTN Store
+      </p>
 
       {!hiddenCart && (
         <div className="flex align-center">
