@@ -1,10 +1,7 @@
-export const dynamic = 'force-dynamic'
-
 import { ProductDetail } from "@/components";
 import { Metadata } from "next";
 
 type Props = { params: { productId?: string } };
-
 
 export const metadata: Metadata = {
   title: "Weather Store",
@@ -14,7 +11,10 @@ export const metadata: Metadata = {
   },
 };
 
-const Page = ({ params: { productId } }: Props) => {
+const Page = (props: Props) => {
+  let {
+    params: { productId },
+  } = props;
   return <ProductDetail {...{ productId }} />;
 };
 
