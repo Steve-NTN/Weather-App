@@ -1,7 +1,9 @@
 "use client";
 
 import Footer from "@/components/Footer";
-import { ContentContainer, Header } from "../Store/components";
+import { Header } from "../Store/components";
+import { CheckoutForm } from "./components";
+import ContentContainer from "@/components/ContentContainer";
 
 type Props = {};
 
@@ -13,6 +15,7 @@ const StoreCheckout = (props: Props) => {
       <ContentContainer className="p-4">
         {/* THANH TÌM KIẾM SẢN PHẨM */}
         {/* <ProductSearchBar /> */}
+        <CheckoutForm />
 
         {/* DANH SÁCH SẢN PHẨM */}
         {/* <Products className="my-4" /> */}

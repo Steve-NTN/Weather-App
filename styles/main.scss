@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --app-bg1: #1f232d;
+  --app-bg2: #3d3e42;
+  --app-color: rgb(234 179 8 / 0.9);
+  --app-blur-color: rgb(234 179 8 / 0.35);
+  --yellow-color: rgb(234, 179, 8)
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,4 +19,21 @@
 .weather-icon {
   max-width: 64px;
   margin: 0 auto;
+}
+
+
+.cv-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.cv-input-label {
+  color: #fff;
+  font-weight: 700;
+}
+
+.row-center {
+  display: flex;
+  align-items: center;
 }

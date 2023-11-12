@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { IconType } from "react-icons";
 
 export interface AppType {
@@ -35,4 +36,32 @@ export type CartProductType = {
   quantity: number;
   price: number;
   img: string;
+};
+
+export type HeaderOptionType = {
+  label: string;
+  id: string;
+  url?: string;
+};
+
+export type SocialMediaType = {
+  icon: IconType;
+  link: string;
+};
+
+export type ExperienceType = {
+  companyName?: string;
+  location?: string;
+  startTime?: string;
+  endTime?: string;
+  position: string;
+  projects: ExperienceProject[];
+};
+
+export type ExperienceProject = {
+  title: string;
+  content?: {
+    label: string;
+    value: string | ReactNode;
+  }[];
 };

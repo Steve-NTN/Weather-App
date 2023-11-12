@@ -2,13 +2,14 @@ import { ReactNode } from "react";
 import { GrClose } from "react-icons/gr";
 
 type Props = {
+  title: string;
   children: ReactNode;
   isOpen: boolean;
   setIsOpen: (show: boolean) => void;
 };
 
 const Drawer = (props: Props) => {
-  let { isOpen, children, setIsOpen } = props;
+  let { isOpen, children, title, setIsOpen } = props;
 
   return (
     <div
@@ -28,7 +29,7 @@ const Drawer = (props: Props) => {
       >
         <div className="relative flex flex-col overflow-y-scroll h-full">
           <div className="p-4 flex items-center justify-between border-b">
-            <p className="font-bold text-lg">Giỏ hàng</p>
+            <p className="font-bold text-lg">{title}</p>
             <button
               className="rounded-full p-2 hover:bg-gray-200"
               onClick={() => setIsOpen(false)}

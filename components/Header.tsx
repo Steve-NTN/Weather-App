@@ -35,7 +35,7 @@ export default function Header(props: Props) {
       )}
 
       {/* GIỎ HÀNG */}
-      <Drawer isOpen={showCart} setIsOpen={setshowCart}>
+      <Drawer isOpen={showCart} setIsOpen={setshowCart} title="Giỏ hàng">
         <Cart />
       </Drawer>
     </div>

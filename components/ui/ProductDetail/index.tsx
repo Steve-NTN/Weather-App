@@ -1,7 +1,7 @@
 "use client";
 
 import { Header } from "@/components";
-import { ContentContainer } from "../Store/components";
+import { ContentContainer } from "@/components";
 import Footer from "@/components/Footer";
 import { Gallery, Information } from "./components";
 
@@ -20,7 +20,6 @@ const ProductDetail = ({ productDetail }: Props) => {
           <Gallery {...{ productDetail }} />
           <Information {...{ productDetail }} />
         </div>
-
       </ContentContainer>
 
       <Footer />

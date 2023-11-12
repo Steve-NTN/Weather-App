@@ -52,6 +52,12 @@ export const cartSlide = createSlice({
     setCart: (state: any, action: any) => {
       state.cart = action.payload;
     },
+    removeItem: (state: any, action: any) => {
+      state.cart = state.cart.filter(
+        (item: CartProductType) => item.id !== action.payload.id
+      );
+      setCartFunc(state.cart);
+    },
   },
 });
 
@@ -81,4 +87,4 @@ export const TotalPriceSelector = createSelector(
     )
 );
 
-export const { increment, decrement, setCart } = cartSlide.actions;
+export const { increment, decrement, setCart, removeItem } = cartSlide.actions;

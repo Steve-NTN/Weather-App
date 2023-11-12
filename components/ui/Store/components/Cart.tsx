@@ -1,13 +1,21 @@
 import { useRouter } from "next/navigation";
-import { useAppSelector } from "@/store";
+import { MdDelete } from "react-icons/md";
+import { useAppDispatch, useAppSelector } from "@/store";
 import "@/styles/Cart.scss";
 import ChangeOrderQuantity from "./ChangeOrderQuantity";
+import { removeItem } from "@/store/cart";
 
 type Props = {};
 
 const Cart = (props: Props) => {
   const { push } = useRouter();
+  const dispatch = useAppDispatch();
   const cartProducts = useAppSelector((state) => state.cartReducer.cart);
+
+  // XỬ LÝ THÊM VÀO GIỎ HÀNG
+  const onClickRemoveItem = (product: any) => {
+    dispatch(removeItem(product));
+  };
 
   // XỬ LÝ KHI BẤM THANH TOÁN
   const onClickPayment = () => {
@@ -33,7 +41,15 @@ const Cart = (props: Props) => {
                 <p className="text-sm">x{product.quantity}</p>
               </div>
             </div>
-            <ChangeOrderQuantity product={product} />
+            <div className="flex gap-2">
+              <ChangeOrderQuantity product={product} />
+              <button
+                className="p-2 hover:bg-gray-200 rounded-full"
+                onClick={() => onClickRemoveItem(product)}
+              >
+                <MdDelete className="w-[24px] h-[24px]" />
+              </button>
+            </div>
           </div>
         ))}
       </div>

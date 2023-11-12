@@ -2,7 +2,6 @@
 
 import useStore from "@/hooks/useStore";
 import {
-  ContentContainer,
   Header,
   ProductSearchBar,
   Products,
@@ -11,6 +10,7 @@ import { createContext } from "react";
 import { ProductsFilterType } from "@/types";
 import Footer from "@/components/Footer";
 import useLocalStorage from "@/hooks/useLocalStorage";
+import ContentContainer from "@/components/ContentContainer";
 
 type Props = {};
 
