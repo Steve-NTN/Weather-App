@@ -28,4 +28,7 @@ const StyledTextFieldLib = styled(TextFieldLib)({
   },
 });
 
+
+TextField.displayName = 'TextField';
+
 export default TextField;

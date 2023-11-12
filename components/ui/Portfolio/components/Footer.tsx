@@ -27,7 +27,7 @@ const Footer = (props: Props) => {
     <StyledFooter className="section">
       <Typography className="author">Steve NTN</Typography>
       <Container>
-        <Typography align="center">"Thanks for scrolling"</Typography>
+        <Typography align="center">{'"Thanks for scrolling"'}</Typography>
       </Container>
 
       <StyledScrollTopBtn onClick={onClickScrollTop} id="scroll_top_btn">

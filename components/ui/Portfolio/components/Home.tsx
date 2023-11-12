@@ -43,7 +43,7 @@ const Home = (props: Props) => {
             <LeftInforBar spacing={2}>
               <Typography className="title1 font-bold">Hi</Typography>
               <Typography className="title2 font-bold">
-                I'm Steve Nguyen
+                {"I'm Steve Nguyen"}
               </Typography>
               <Box className="title1 font-bold">
                 And I am a
