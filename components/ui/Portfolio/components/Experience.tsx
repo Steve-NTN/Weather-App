@@ -25,7 +25,7 @@ const Experience = (props: Props) => {
       projects: [
         {
           title:
-            "NTN app: contains portfolio app + shopping cart app + weather forecast app ",
+            "NTN app: contains portfolio app + shopping cart app + weather forecast app",
           content: [
             {
               label: "Technologies",
@@ -40,8 +40,8 @@ const Experience = (props: Props) => {
             {
               label: "Demo link",
               value: (
-                <Link href="https://weather-app-gules-three.vercel.app">
-                  https://weather-app-gules-three.vercel.app
+                <Link href="https://ntn-app.vercel.app">
+                  https://ntn-app.vercel.app
                 </Link>
               ),
             },

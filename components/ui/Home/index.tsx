@@ -22,7 +22,7 @@ const Page = (props: Props) => {
   };
 
   return (
-    <section>
+    <div className="home_box">
       <p className="font-bold text-4xl text-center my-7">NTN App</p>
 
       <div className="grid grid-cols-2 gap-4 px-4">
@@ -45,7 +45,7 @@ const Page = (props: Props) => {
       <div className="air air2"></div>
       <div className="air air3"></div>
       <div className="air air4"></div>
-    </section>
+    </div>
   );
 };
 

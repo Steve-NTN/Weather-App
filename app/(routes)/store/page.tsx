@@ -4,10 +4,13 @@ import { Metadata } from "next";
 type Props = {};
 
 export const metadata: Metadata = {
-  title: "Weather Store",
+  title: "Steve NTN shopping cart",
+  icons: {
+    icon: '/icons/animation_cart.gif',
+  },
   openGraph: {
-    title: "Weather Store",
-    description: "Weather App made by NTN",
+    title: "Steve NTN shopping cart",
+    description: "Shopping cart made by NTN",
   },
 };
 

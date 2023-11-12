@@ -7,6 +7,9 @@ type Props = {};
 
 export const metadata: Metadata = {
   title: "Weather App",
+  icons: {
+    icon: '/icons/animation_weather.gif',
+  },
   openGraph: {
     title: "Weather App",
     description: "Weather App made by NTN",

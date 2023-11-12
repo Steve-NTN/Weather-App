@@ -22,7 +22,7 @@
 }
 
 
-.cv-title {
+.MuiTypography-root.cv-title {
   font-size: 48px;
   font-weight: 700;
   color: #fff;
@@ -36,4 +36,11 @@
 .row-center {
   display: flex;
   align-items: center;
+}
+
+
+@media screen and (max-width: 900px)  {
+  .MuiTypography-root.cv-title {
+    font-size: 38px;
+  }
 }
