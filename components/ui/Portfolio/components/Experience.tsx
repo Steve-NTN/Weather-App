@@ -30,7 +30,7 @@ const Experience = (props: Props) => {
             {
               label: "Technologies",
               value:
-                "nextjs + mongoDB + prisma (api, db). Reactjs, MUI, tailwindcss, typescript, react-redux, redux toolkit, emailjs to send contact",
+                "NextJs, MongoDB, Prisma for Back-end. Reactjs, Tailwindcss, MUI, Typescript, Redux toolkit, Emailjs for Front-end",
             },
             {
               label: "Responsibilities",
@@ -53,12 +53,12 @@ const Experience = (props: Props) => {
             {
               label: "Technologies",
               value:
-                "Expressjs + jwt + mysql + swagger api doc + reactjs + typescript + styled-components",
+                "Expressjs, Jwt, Mysql, Swagger for Back-end. Reactjs, Typescript, Styled-components for Front-end",
             },
             {
               label: "Responsibilities",
               value:
-                "build DB for the project, write api. Build project interface, fix bugs",
+                "build DB for the project, write api. Build project interface, responsive web design, fix bugs",
             },
           ],
         },
@@ -68,7 +68,7 @@ const Experience = (props: Props) => {
             {
               label: "Technologies",
               value:
-                "reactjs + MUI. Google sheet api (push subscription data to sheet)",
+                "Reactjs, MUI and Google sheet api to push subscription data to sheet",
             },
             {
               label: "Demo link",
@@ -82,12 +82,12 @@ const Experience = (props: Props) => {
         },
         {
           title:
-            "Other projects: barcode scanning software (Tkinter + mysql), todo app (Nextjs + bootstrap), wine store (Django + reactjs),...",
+            "Other projects: projects: barcode scanning (Tkinter, Mysql), todo app (Nextjs, Bootstrap), wine store (Django and Reactjs),...",
         },
       ],
     },
     {
-      companyName: "Company A",
+      companyName: "Company A (hidden for security reasons)",
       location: "Ha Noi",
       startTime: "07/2023",
       endTime: "now",
@@ -98,12 +98,12 @@ const Experience = (props: Props) => {
           content: [
             {
               label: "Technologies",
-              value: "Reactjs + typescript + ant design + tailwindcss",
+              value: "Reactjs, Typescript, Ant design, TailwindCss",
             },
             {
               label: "Responsibilities",
               value:
-                "fix bugs, design, develop, test app and connect, handle api",
+                "fix bugs, design, develop, responsive web design, test app and connect, handle api",
             },
             {
               label: "Team size",
@@ -117,11 +117,11 @@ const Experience = (props: Props) => {
             {
               label: "Technologies",
               value:
-                "Reactjs + typescript + MUI + push register data to google sheet",
+                "Reactjs, Typescript,  MUI and  push register data to google sheet",
             },
             {
               label: "Responsibilities",
-              value: "design, develop, test landing page for each CMS project",
+              value: "design, develop, responsive web design, test landing page for each CMS project",
             },
             {
               label: "Team size",
@@ -140,11 +140,11 @@ const Experience = (props: Props) => {
       projects: [
         {
           title:
-            "Instructor of basic and advanced web programming + reactjs course",
+            "Instructor of basic and advanced web programming (HTML5, CSS3, JS) and Reactjs course",
         },
         {
           title:
-            "Build BE nodejs server with expressjs to serve frontend course",
+            "Build Node server with Express Js framework to serve front-end course",
         },
       ],
     },
@@ -153,7 +153,7 @@ const Experience = (props: Props) => {
       location: "Ha Noi",
       startTime: "07/2021",
       endTime: "07/2023",
-      position: "Junior Full Stack (full time)",
+      position: "Full Stack (full time)",
       projects: [
         {
           title:
@@ -162,12 +162,12 @@ const Experience = (props: Props) => {
             {
               label: "Technologies",
               value:
-                "Reactjs + typescript + MUI + redux + websocket,...(user interface). The DB uses mariadb. Firebase (notification, OTP)",
+                "Reactjs, Typescript, MUI, Redux, Websocket for Front-end. Frappe, Mariadb. Firebase for Back-end",
             },
             {
               label: "Responsibilities",
               value:
-                "write api for Freshdi app and business. Build interface, fix bugs, optimize Freshdi business performance",
+                "write api for Freshdi app and business. Build interface, responsive web design, fix bugs, optimize Freshdi business performance",
             },
             {
               label: "Team size",
@@ -190,12 +190,12 @@ const Experience = (props: Props) => {
             {
               label: "Technologies",
               value:
-                "Reactjs + typescript + MUI + redux + Vnpay + websocket,... (user interface). Firebase (notification, OTP)",
+                "Reactjs, Typescript, MUI, Redux, Vnpay, websocket for Front-end. Frappe, Mariadb, Firebase for Back-end",
             },
             {
               label: "Responsibilities",
               value:
-                "build interface, fix bugs, optimize Freshdi trace performance",
+                "responsive web design, build interface, fix bugs, optimize Freshdi Trace performance",
             },
             {
               label: "Team size",
@@ -226,7 +226,7 @@ const Experience = (props: Props) => {
             {
               label: "Technologies",
               value:
-                "Pytorch + convolutional network CNN (model training), scrapy (crawl data). Flask + bootstrap + jquery + redis (image recognition web interface)",
+                "Pytorch, Convolutional network CNN for training model, Scrapy for crawling data. Flask,  Bootstrap,  Jquery,  Redis for building web application",
             },
             {
               label: "Responsibilities",
@@ -261,7 +261,7 @@ const Experience = (props: Props) => {
           content: [
             {
               label: "Technologies",
-              value: ".NET, entity framework (C#), sql server, javascript",
+              value: ".NET, Entity framework (C#), Sql server for Back-end and Javascript, Css3 for Front-end",
             },
             {
               label: "Responsibilities",
