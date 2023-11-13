@@ -1,5 +1,6 @@
 import { Portfolio } from "@/components";
 import { Metadata } from "next";
+import Head from "next/head";
 
 type Props = {};
 
@@ -16,7 +17,17 @@ export const metadata: Metadata = {
 };
 
 const Page = async (props: Props) => {
-  return <Portfolio />;
+  return (
+    <>
+      <Head>
+        <meta
+          property="og:image"
+          content={"imgs/sharelink_cv.png"}
+        />
+      </Head>
+      <Portfolio />
+    </>
+  );
 };
 
 export default Page;
