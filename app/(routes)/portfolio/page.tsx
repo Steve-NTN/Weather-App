@@ -4,13 +4,13 @@ import { Metadata } from "next";
 type Props = {};
 
 export const metadata: Metadata = {
-  title: "Steve NTN Portfolio",
+  title: "Steve Nguyen Portfolio",
   icons: {
     icon: "/icons/portfolio.png",
   },
   openGraph: {
-    title: "Steve NTN Portfolio",
-    description: "Portfolio made by NTN",
+    title: "Steve Nguyen Portfolio",
+    description: "Portfolio made by Steve Nguyen",
     images: ["/imgs/sharelink_cv.png"],
   },
 };
