@@ -25,7 +25,7 @@ const Footer = (props: Props) => {
 
   return (
     <StyledFooter className="section">
-      <Typography className="author">Steve NTN</Typography>
+      <Typography className="author">Steve Nguyen</Typography>
       <Container>
         <Typography align="center">{'"Thanks for scrolling"'}</Typography>
       </Container>

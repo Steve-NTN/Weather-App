@@ -20,10 +20,11 @@ const Page = async (props: Props) => {
   return (
     <>
       <Head>
-        <meta
-          property="og:image"
-          content={"imgs/sharelink_cv.png"}
-        />
+        <meta property="og:image" content={"imgs/sharelink_cv.png"} />
+        <meta property="og:url" content={typeof window !== "undefined" ? window.location.href : ""} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="600" />
       </Head>
       <Portfolio />
     </>

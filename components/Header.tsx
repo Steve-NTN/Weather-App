@@ -4,6 +4,10 @@ import { useAppSelector } from "@/store";
 import { totalCartProductsSelector } from "@/store/cart";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import Cart from "./ui/Store/components/Cart";
+import { Avatar, Badge, IconButton, Stack, Typography } from "@mui/material";
+import styled from "styled-components";
+import { getUser } from "@/store/user";
+import useRoute from "@/hooks/useRoute";
 
 type Props = {
   hiddenCart?: boolean;
@@ -12,32 +16,53 @@ type Props = {
 export default function Header(props: Props) {
   const { hiddenCart } = props;
   const totalProductQuantity = useAppSelector(totalCartProductsSelector);
+  const user = useAppSelector(getUser);
   const { showCart, setshowCart, onClickCart, onClickLogo } = useHeader();
+  const { router } = useRoute();
+
+  const onClickUser = () => {
+    router.push("/login");
+  };
 
   return (
-    <div className="p-4 gap-2 flex justify-between align-center border-b">
-      <p className="font-bold text-3xl md:text-4xl cursor-pointer" onClick={onClickLogo}>
+    <StyledHeader
+      direction="row"
+      spacing={2}
+      className="p-4 justify-between items-center border-b"
+    >
+      <Typography
+        className="font-bold text-white text-3xl md:text-4xl cursor-pointer"
+        onClick={onClickLogo}
+      >
         NTN Store
-      </p>
+      </Typography>
 
-      {!hiddenCart && (
-        <div className="flex align-center">
-          <button
-            className="relative p-2 hover:bg-gray-200 rounded-full"
-            onClick={onClickCart}
-          >
-            <span className="absolute text-sm text-white top-0 right-0 bg-red-500 rounded-full w-4 h-4 font-mono">
-              {totalProductQuantity}
-            </span>
-            <AiOutlineShoppingCart className="cursor-pointer text-2xl" />
-          </button>
-        </div>
-      )}
+      <Stack spacing={2} direction="row" className="align-center">
+        {!hiddenCart && (
+          <IconButton onClick={onClickCart}>
+            <Badge badgeContent={totalProductQuantity} color="primary">
+              <AiOutlineShoppingCart className="cursor-pointer text-2xl" />
+            </Badge>
+          </IconButton>
+        )}
+
+        <IconButton className="p-0" onClick={onClickUser}>
+          <Avatar className="user_btn" />
+        </IconButton>
+      </Stack>
 
       {/* GIỎ HÀNG */}
       <Drawer isOpen={showCart} setIsOpen={setshowCart} title="Giỏ hàng">
         <Cart />
       </Drawer>
-    </div>
+    </StyledHeader>
   );
 }
+
+const StyledHeader = styled(Stack)({
+  backgroundColor: "var(--app-color)",
+  ".user_btn": {
+    backgroundColor: "#fff",
+    color: "var(--app-color)",
+  },
+});

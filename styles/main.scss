@@ -7,7 +7,7 @@
   --app-bg2: #3d3e42;
   --app-color: rgb(234 179 8 / 0.9);
   --app-blur-color: rgb(234 179 8 / 0.35);
-  --yellow-color: rgb(234, 179, 8)
+  --yellow-color: rgb(234, 179, 8);
 }
 
 * {
@@ -21,11 +21,16 @@
   margin: 0 auto;
 }
 
-
 .MuiTypography-root.cv-title {
   font-size: 48px;
   font-weight: 700;
   color: #fff;
+}
+
+.MuiTypography-root.cart-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #000;
 }
 
 .cv-input-label {
@@ -38,9 +43,11 @@
   align-items: center;
 }
 
-
-@media screen and (max-width: 900px)  {
+@media screen and (max-width: 900px) {
   .MuiTypography-root.cv-title {
     font-size: 38px;
+  }
+  .MuiTypography-root.cart-title {
+    font-size: 32px;
   }
 }

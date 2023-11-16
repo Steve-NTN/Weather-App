@@ -25,6 +25,11 @@ export type ProductsFilterType = {
   category?: string;
 };
 
+// USER
+export type UserType = {
+  name?: string;
+};
+
 // GIỎ HÀNG
 export type CartType = {
   cart: CartProductType[];

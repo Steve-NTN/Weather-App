@@ -4,8 +4,8 @@ import { TiWeatherPartlySunny, TiShoppingCart } from "react-icons/ti";
 import { MdContactPage } from "react-icons/md";
 import { AppType } from "@/types";
 import { useRouter } from "next/navigation";
-import "./Home.scss";
 import { StyledAppBox } from "./Home.styles";
+import { PrimaryBackground } from "@/components/Background";
 
 type Props = {};
 
@@ -22,7 +22,7 @@ const Page = (props: Props) => {
   };
 
   return (
-    <div className="home_box">
+    <PrimaryBackground>
       <p className="font-bold text-4xl text-center my-7">NTN App</p>
 
       <div className="grid grid-cols-2 gap-4 px-4">
@@ -41,11 +41,7 @@ const Page = (props: Props) => {
         })}
       </div>
 
-      <div className="air air1"></div>
-      <div className="air air2"></div>
-      <div className="air air3"></div>
-      <div className="air air4"></div>
-    </div>
+    </PrimaryBackground>
   );
 };
 
