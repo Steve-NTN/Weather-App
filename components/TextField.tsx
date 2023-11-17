@@ -9,8 +9,8 @@ const TextField = forwardRef((props: TextFieldProps, ref: any) => {
   return (
     <StyledTextFieldLib
       InputLabelProps={{ shrink: true }}
-      {...props}
       ref={ref}
+      {...props}
     />
   );
 });
@@ -24,7 +24,7 @@ const StyledTextFieldLib = styled(TextFieldLib)({
     // color: "#fff",
   },
   "& input, textarea": {
-    color: "#fff",
+    // color: "#fff",
   },
 });
 

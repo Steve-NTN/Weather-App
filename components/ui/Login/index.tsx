@@ -7,7 +7,7 @@ type Props = {};
 
 const Login = (props: Props) => {
   return (
-    <PrimaryBackground>
+    <PrimaryBackground height="100vh">
       <Container className="content">
         <LoginForm />
       </Container>
