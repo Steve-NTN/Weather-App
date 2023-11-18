@@ -8,6 +8,7 @@
   --app-color: rgb(234 179 8 / 0.9);
   --app-blur-color: rgb(234 179 8 / 0.35);
   --yellow-color: rgb(234, 179, 8);
+  --error-color: red;
 }
 
 * {
@@ -41,6 +42,11 @@
 .row-center {
   display: flex;
   align-items: center;
+}
+
+.MuiTypography-root.error_text {
+  color: var(--error-color);
+  text-align: center;
 }
 
 @media screen and (max-width: 900px) {

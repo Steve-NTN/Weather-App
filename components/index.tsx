@@ -11,6 +11,7 @@ export { default as Dialog } from "./Dialog";
 export { default as Provider } from "./Provider";
 export { default as Drawer } from "./Drawer";
 export { default as Header } from "./Header";
+export { default as Register } from "./ui/Register";
 export { default as ContentContainer } from "./ContentContainer";
 export { default as Row } from "./Row";
 export { default as Img } from "./Img";

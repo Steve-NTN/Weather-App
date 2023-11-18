@@ -18,4 +18,13 @@ const CardSwiper = (props: SwiperProps) => {
   );
 };
 
-export { CardSwiper };
+const BasicSwiper = (props: SwiperProps) => {
+  return (
+    <Swiper
+      className="mySwiper"
+      {...props}
+    />
+  );
+};
+
+export { CardSwiper, BasicSwiper };

@@ -1,13 +1,22 @@
 import Drawer from "@/components/Drawer";
 import useHeader from "@/hooks/useHeader";
-import { useAppSelector } from "@/store";
+import { useAppDispatch, useAppSelector } from "@/store";
 import { totalCartProductsSelector } from "@/store/cart";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import Cart from "./ui/Store/components/Cart";
-import { Avatar, Badge, IconButton, Stack, Typography } from "@mui/material";
+import {
+  Avatar,
+  Badge,
+  IconButton,
+  Menu,
+  MenuItem,
+  Stack,
+  Typography,
+} from "@mui/material";
 import styled from "styled-components";
-import { getUser } from "@/store/user";
+import { getUser, setUser } from "@/store/user";
 import useRoute from "@/hooks/useRoute";
+import { useState } from "react";
 
 type Props = {
   hiddenCart?: boolean;
@@ -19,8 +28,33 @@ export default function Header(props: Props) {
   const user = useAppSelector(getUser);
   const { showCart, setshowCart, onClickCart, onClickLogo } = useHeader();
   const { router } = useRoute();
+  const dispatch = useAppDispatch();
+  const [menuConfigs, setMenuConfigs] = useState({
+    open: false,
+    anchorEl: null,
+  });
 
-  const onClickUser = () => {
+  const onClickUser = (e: any) => {
+    if (user) {
+      setMenuConfigs({
+        open: true,
+        anchorEl: e?.currentTarget,
+      });
+    } else {
+      router.push("/login");
+    }
+  };
+
+  const formatUserName = (name = "") => {
+    return name && name?.length > 0 && name[0];
+  };
+
+  const onCloseMenu = () => {
+    setMenuConfigs({ ...menuConfigs, open: false });
+  };
+
+  const onClickLogout = () => {
+    dispatch(setUser(undefined));
     router.push("/login");
   };
 
@@ -41,15 +75,25 @@ export default function Header(props: Props) {
         {!hiddenCart && (
           <IconButton onClick={onClickCart}>
             <Badge badgeContent={totalProductQuantity} color="primary">
-              <AiOutlineShoppingCart className="cursor-pointer text-2xl" />
+              <AiOutlineShoppingCart className="cursor-pointer text-2xl text-white" />
             </Badge>
           </IconButton>
         )}
 
         <IconButton className="p-0" onClick={onClickUser}>
-          <Avatar className="user_btn" />
+          <Avatar className="user_btn">
+            {user && formatUserName(user?.fullname)}
+          </Avatar>
         </IconButton>
       </Stack>
+
+      <Menu
+        open={menuConfigs.open}
+        onClose={onCloseMenu}
+        anchorEl={menuConfigs.anchorEl}
+      >
+        <MenuItem onClick={onClickLogout}>Logout</MenuItem>
+      </Menu>
 
       {/* GIỎ HÀNG */}
       <Drawer isOpen={showCart} setIsOpen={setshowCart} title="Giỏ hàng">

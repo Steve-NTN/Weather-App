@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import useProductCategory from "@/hooks/useProductCategory";
 import { StoreContext } from "..";
+import { Box } from "@mui/material";
 
 type Props = {};
 
@@ -24,7 +25,7 @@ const Filter = (props: Props) => {
   };
 
   return (
-    <div className="p-4 bg-white rounded w-full max-w-xl">
+    <Box className="p-4 bg-white rounded w-full max-w-xl">
       <p className="font-bold">Bộ lọc</p>
 
       <div className="my-4">
@@ -63,7 +64,7 @@ const Filter = (props: Props) => {
           Hoàn tất
         </button>
       </div>
-    </div>
+    </Box>
   );
 };
 

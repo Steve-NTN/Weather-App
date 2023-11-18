@@ -1,4 +1,5 @@
 import "@/styles/Footer.scss";
+import { Box, styled } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 type Props = {};
@@ -18,7 +19,7 @@ const Footer = (props: Props) => {
   };
 
   return (
-    <div className="bg-slate-100 p-4">
+    <StyledFooter className=" p-4">
       <div className="max-w-screen-xl grid md:grid-cols-4 sm:grid-cols-2 gap-4 mx-auto mb-4">
         <div>
           <p className="title">NTN Store</p>
@@ -79,7 +80,14 @@ const Footer = (props: Props) => {
           © {currentTime.getFullYear()} NTN Store. All rights reserved.
         </p>
       </div>
-    </div>
+    </StyledFooter>
   );
 };
+
+const StyledFooter = styled(Box)({
+  backgroundColor: "var(--app-color)",
+  "p, svg": {
+    color: "#fff",
+  },
+});
 export default Footer;

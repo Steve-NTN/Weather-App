@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
         });
         response.cookies.set("token", token);
         const userDetail = await checkgetUserDetail(user?.id);
-        return NextResponse.json({ ...userDetail });
+        return NextResponse.json({ data: userDetail });
       } else {
         return NextResponse.json(
           { message: "Incorrect Username and/or Password!" },

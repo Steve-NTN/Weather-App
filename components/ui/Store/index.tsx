@@ -2,6 +2,7 @@
 
 import useStore from "@/hooks/useStore";
 import {
+  Banner,
   Header,
   ProductSearchBar,
   Products,
@@ -35,9 +36,11 @@ export default function Store({}: Props) {
       <div className="flex flex-col justify-between min-h-screen">
         <Header />
 
-        <ContentContainer className="p-4">
+        <ContentContainer>
+          <Banner />
+          
           {/* THANH TÌM KIẾM SẢN PHẨM */}
-          <ProductSearchBar />
+          <ProductSearchBar mt={2}/>
 
           {/* DANH SÁCH SẢN PHẨM */}
           <Products className="my-4" />

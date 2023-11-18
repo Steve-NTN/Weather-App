@@ -1,14 +1,16 @@
+import { Container } from "@mui/material";
+
 type Props = {
   children: string | JSX.Element | (string | JSX.Element)[];
-  className: string | undefined;
+  className?: string | undefined;
 };
 
 const ContentContainer = (props: Props) => {
   let { className, children } = props;
   return (
-    <div className={`max-w-screen-lg mx-auto flex-1 w-full ${className}`}>
+    <Container className={`mx-auto flex-1 ${className}`}>
       {children}
-    </div>
+    </Container>
   );
 };
 
