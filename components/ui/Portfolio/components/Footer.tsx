@@ -37,7 +37,7 @@ const Footer = (props: Props) => {
   );
 };
 
-const StyledFooter = styled("div")({
+const StyledFooter = styled("div")(({theme}) => ({
   backgroundColor: "var(--app-bg1)",
   borderTop: "2px solid var(--app-color)",
   position: "relative",
@@ -56,7 +56,13 @@ const StyledFooter = styled("div")({
     fontWeight: 700,
     margin: "0 auto",
   },
-});
+
+  [theme.breakpoints.down('md')]: {
+    p: {
+      fontSize: 18
+    }
+  }
+}));
 
 const StyledScrollTopBtn = styled(IconButton)({
   position: "fixed",

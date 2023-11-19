@@ -24,24 +24,45 @@ const Experience = (props: Props) => {
       position: "Personal project",
       projects: [
         {
-          title:
-            "NTN app: contains portfolio app + shopping cart app + weather forecast app",
+          title: "Portfolio website",
           content: [
             {
               label: "Technologies",
               value:
-                "NextJs, MongoDB, Prisma for Back-end. Reactjs, Tailwindcss, MUI, Typescript, Redux toolkit, Emailjs for Front-end",
+                "NextJs, TailwindCss, MUI, Typescript, Redux toolkit, Emailjs for Front-end",
             },
             {
               label: "Responsibilities",
-              value:
-                "build DB for the project, write api. Build project interface, fix bugs",
+              value: "develop UI, responsive web design, testing, fix bugs",
             },
             {
               label: "Demo link",
               value: (
-                <Link href="https://ntn-app.vercel.app">
-                  https://ntn-app.vercel.app
+                <Link href="https://ntn-app.vercel.app/portfolio">
+                  https://ntn-app.vercel.app/portfolio
+                </Link>
+              ),
+            },
+          ],
+        },
+        {
+          title: "Ecommerce website",
+          content: [
+            {
+              label: "Technologies",
+              value:
+                "NextJs, Prisma, MongoDB, JWT for Back-end. MUI, TailwindCss, Typescript, Redux toolkit",
+            },
+            {
+              label: "Responsibilities",
+              value:
+                "create user, product DB, write api, develop home, login, register, cart UI, responsive web design, testing, fix bugs",
+            },
+            {
+              label: "Demo link",
+              value: (
+                <Link href="https://ntn-app.vercel.app/store">
+                  https://ntn-app.vercel.app/store
                 </Link>
               ),
             },
@@ -63,26 +84,17 @@ const Experience = (props: Props) => {
           ],
         },
         {
-          title: "Landing page social pioneers",
-          content: [
-            {
-              label: "Technologies",
-              value:
-                "Reactjs, MUI and Google sheet api to push subscription data to sheet",
-            },
-            {
-              label: "Demo link",
-              value: (
-                <Link href="https://socialpioneersmarketingneu.com">
-                  https://socialpioneersmarketingneu.com
-                </Link>
-              ),
-            },
-          ],
-        },
-        {
-          title:
-            "Other projects: projects: barcode scanning (Tkinter, Mysql), todo app (Nextjs, Bootstrap), wine store (Django and Reactjs),...",
+          title: (
+            <>
+              Other projects: landing page for NEU (Reactjs, MUI,
+              demo:{" "}
+              <Link href="https://socialpioneersmarketingneu.com">
+                https://socialpioneersmarketingneu.com
+              </Link>
+              ), barcode scanning (Tkinter, Mysql), todo app (Nextjs,
+              Bootstrap), wine store (Django and Reactjs),...,
+            </>
+          ),
         },
       ],
     },
@@ -121,7 +133,8 @@ const Experience = (props: Props) => {
             },
             {
               label: "Responsibilities",
-              value: "design, develop, responsive web design, test landing page for each CMS project",
+              value:
+                "design, develop, responsive web design, test landing page for each CMS project",
             },
             {
               label: "Team size",
@@ -261,7 +274,8 @@ const Experience = (props: Props) => {
           content: [
             {
               label: "Technologies",
-              value: ".NET, Entity framework (C#), Sql server for Back-end and Javascript, Css3 for Front-end",
+              value:
+                ".NET, Entity framework (C#), Sql server for Back-end and Javascript, Css3 for Front-end",
             },
             {
               label: "Responsibilities",

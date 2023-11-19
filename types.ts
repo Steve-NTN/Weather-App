@@ -64,7 +64,7 @@ export type ExperienceType = {
 };
 
 export type ExperienceProject = {
-  title: string;
+  title: string | ReactNode;
   content?: {
     label: string;
     value: string | ReactNode;
