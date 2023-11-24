@@ -37,7 +37,7 @@ export default function Store({}: Props) {
         <Header />
 
         <ContentContainer>
-          <Banner />
+          <Banner mt={4}/>
           
           {/* THANH TÌM KIẾM SẢN PHẨM */}
           <ProductSearchBar mt={2}/>

@@ -17,6 +17,7 @@ import styled from "styled-components";
 import { getUser, setUser } from "@/store/user";
 import useRoute from "@/hooks/useRoute";
 import { useState } from "react";
+import { FaRegUser } from "react-icons/fa";
 
 type Props = {
   hiddenCart?: boolean;
@@ -80,10 +81,8 @@ export default function Header(props: Props) {
           </IconButton>
         )}
 
-        <IconButton className="p-0" onClick={onClickUser}>
-          <Avatar className="user_btn">
-            {user && formatUserName(user?.fullname)}
-          </Avatar>
+        <IconButton className="user_btn" onClick={onClickUser}>
+          {user ? formatUserName(user?.fullname) : <FaRegUser />}
         </IconButton>
       </Stack>
 
@@ -106,7 +105,7 @@ export default function Header(props: Props) {
 const StyledHeader = styled(Stack)({
   backgroundColor: "var(--app-color)",
   ".user_btn": {
-    backgroundColor: "#fff",
-    color: "var(--app-color)",
+    color: "#fff",
+    // color: "var(--app-color)",
   },
 });
