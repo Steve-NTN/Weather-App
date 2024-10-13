@@ -43,12 +43,13 @@ const About = (props: Props) => {
             </Typography>
 
             <Typography mt={2} className="text-white text-justify">
-              Skilled full stack web developer. Ability to learn and implement
-              new technologies quickly. With more than 2 years of experience in
-              Front-end (reactjs, typescript, MUI, ant design, tailwind,
-              bootstrap, sass, redux, ...) and about 1 year in Back-end (nextjs,
-              express, django, frappe, Flask, spring boot) + database (mysql,
-              postgresql, mongodb,...).
+              Skilled Front-End Developer with over 3 years of experience
+              building high- performance web apps. Proficient in JavaScript,
+              React, NextJS, and modern front-end technologies. Expert in
+              creating responsive, accessible, and user-friendly interfaces,
+              with a focus on best practices, performance optimization, and
+              teamwork to deliver scalable solutions. Additionally experienced
+              in developing APIs with ExpressJS, Django, and Flask.
             </Typography>
 
             <StyledButton

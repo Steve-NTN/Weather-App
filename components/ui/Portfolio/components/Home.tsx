@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { BsGithub } from "react-icons/bs";
@@ -12,6 +14,7 @@ import Link from "next/link";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import Row from "@/components/Row";
 import { saveFile } from "@/utils/fileHelpers";
+import { t } from "i18next";
 
 type Props = {};
 
@@ -28,7 +31,7 @@ const Home = (props: Props) => {
   ]);
 
   const onDownloadCV = () => {
-    saveFile("docs/steve_ntn_cv.pdf", "Steve NTN CV");
+    saveFile("docs/NguyenTrongNghia_CV.pdf", "Steve NTN CV");
   };
 
   return (
@@ -92,6 +95,7 @@ const Home = (props: Props) => {
                     Download CV
                   </DownloadButton>
                 </Row>
+                <h1>{t("welcome")}</h1>
               </Stack>
             </LeftInforBar>
           </Grid>

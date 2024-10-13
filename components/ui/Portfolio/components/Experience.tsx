@@ -15,130 +15,148 @@ import { HiBuildingOffice } from "react-icons/hi2";
 import { MdLocationOn } from "react-icons/md";
 import React from "react";
 import { ExperienceType } from "@/types";
+import useBreakpoints from "@/hooks/useBreakpoint";
+import { GoDotFill } from "react-icons/go";
 
 type Props = {};
 
 const Experience = (props: Props) => {
+  const { isSmall } = useBreakpoints();
   const experiences: ExperienceType[] = [
+    // {
+    //   position: "Personal project",
+    //   projects: [
+    //     {
+    //       title: "Portfolio website",
+    //       content: [
+    //         {
+    //           label: "Technologies",
+    //           value:
+    //             "NextJs, TailwindCss, MUI, Typescript, Redux toolkit, Emailjs for Front-end",
+    //         },
+    //         {
+    //           label: "Responsibilities",
+    //           value: "develop UI, responsive web design, testing, fix bugs",
+    //         },
+    //         {
+    //           label: "Demo link",
+    //           value: (
+    //             <Link href="https://ntn-app.vercel.app/portfolio">
+    //               https://ntn-app.vercel.app/portfolio
+    //             </Link>
+    //           ),
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       title: "Ecommerce website",
+    //       content: [
+    //         {
+    //           label: "Technologies",
+    //           value:
+    //             "NextJs, Prisma, MongoDB, JWT for Back-end. MUI, TailwindCss, Typescript, Redux toolkit",
+    //         },
+    //         {
+    //           label: "Responsibilities",
+    //           value:
+    //             "create user, product DB, write api, develop home, login, register, cart UI, responsive web design, testing, fix bugs",
+    //         },
+    //         {
+    //           label: "Demo link",
+    //           value: (
+    //             <Link href="https://ntn-app.vercel.app/store">
+    //               https://ntn-app.vercel.app/store
+    //             </Link>
+    //           ),
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       title: "Account management app",
+    //       content: [
+    //         {
+    //           label: "Technologies",
+    //           value:
+    //             "Expressjs, Jwt, Mysql, Swagger for Back-end. Reactjs, Typescript, Styled-components for Front-end",
+    //         },
+    //         {
+    //           label: "Responsibilities",
+    //           value:
+    //             "build DB for the project, write api. Build project interface, responsive web design, fix bugs",
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       title: (
+    //         <>
+    //           Other projects: landing page for NEU (Reactjs, MUI, demo:{" "}
+    //           <Link href="https://socialpioneersmarketingneu.com">
+    //             https://socialpioneersmarketingneu.com
+    //           </Link>
+    //           ), barcode scanning (Tkinter, Mysql), todo app (Nextjs,
+    //           Bootstrap), wine store (Django and Reactjs),...,
+    //         </>
+    //       ),
+    //     },
+    //   ],
+    // },
     {
-      position: "Personal project",
+      companyName: "FRESHDI",
+      location: "Ha Noi",
+      time: "07/2021 - 07/2023, 10/2024 - PRESENT",
+      position: "Full stack developer",
       projects: [
         {
-          title: "Portfolio website",
+          // title:
+          //   "Freshdi app project, Freshdi business: sales management software for businesses",
           content: [
             {
-              label: "Technologies",
               value:
-                "NextJs, TailwindCss, MUI, Typescript, Redux toolkit, Emailjs for Front-end",
+                "Lead the development of scalable web applications using React, MUI, Redux and TypeScript to build a global marketplace to help buyers and suppliers connect with each other.",
             },
             {
-              label: "Responsibilities",
-              value: "develop UI, responsive web design, testing, fix bugs",
+              value:
+                "Collaborated closely with UX/UI designers and backend teams to develop user-friendly, responsive, and scalable web applications.",
             },
             {
-              label: "Demo link",
-              value: (
-                <Link href="https://ntn-app.vercel.app/portfolio">
-                  https://ntn-app.vercel.app/portfolio
-                </Link>
-              ),
+              value:
+                "Optimized the performance of web applications through code splitting, lazy loading, and efficient state management.",
+            },
+            {
+              value:
+                "Reviews code to ensure adherence to best practices and maintain code quality.",
+            },
+            {
+              value:
+                "Work closely with backend teams to integrate APIs, ensuring seamless data flow between frontend and backend services.",
+            },
+            {
+              value:
+                "Enhanced the website's SEO through keyword optimization and technical improvements, leading to increased organic traffic and better Google indexing.",
             },
           ],
-        },
-        {
-          title: "Ecommerce website",
-          content: [
-            {
-              label: "Technologies",
-              value:
-                "NextJs, Prisma, MongoDB, JWT for Back-end. MUI, TailwindCss, Typescript, Redux toolkit",
-            },
-            {
-              label: "Responsibilities",
-              value:
-                "create user, product DB, write api, develop home, login, register, cart UI, responsive web design, testing, fix bugs",
-            },
-            {
-              label: "Demo link",
-              value: (
-                <Link href="https://ntn-app.vercel.app/store">
-                  https://ntn-app.vercel.app/store
-                </Link>
-              ),
-            },
-          ],
-        },
-        {
-          title: "Account management app",
-          content: [
-            {
-              label: "Technologies",
-              value:
-                "Expressjs, Jwt, Mysql, Swagger for Back-end. Reactjs, Typescript, Styled-components for Front-end",
-            },
-            {
-              label: "Responsibilities",
-              value:
-                "build DB for the project, write api. Build project interface, responsive web design, fix bugs",
-            },
-          ],
-        },
-        {
-          title: (
-            <>
-              Other projects: landing page for NEU (Reactjs, MUI,
-              demo:{" "}
-              <Link href="https://socialpioneersmarketingneu.com">
-                https://socialpioneersmarketingneu.com
-              </Link>
-              ), barcode scanning (Tkinter, Mysql), todo app (Nextjs,
-              Bootstrap), wine store (Django and Reactjs),...,
-            </>
-          ),
         },
       ],
     },
     {
-      companyName: "Company A (hidden for security reasons)",
+      companyName: "Phoenixunity",
       location: "Ha Noi",
-      startTime: "07/2023",
-      endTime: "now",
-      position: "Front-end Dev (full time)",
+      time: "10/2023 - 10/2024",
+      position: "Front-end developer",
       projects: [
         {
-          title: "CMS app project",
           content: [
             {
-              label: "Technologies",
-              value: "Reactjs, Typescript, Ant design, TailwindCss",
-            },
-            {
-              label: "Responsibilities",
               value:
-                "fix bugs, design, develop, responsive web design, test app and connect, handle api",
+                "Utilized technologies such as ReactJS, Ant Design, Tailwind css, Redux and NextJS across various projects for foreign partners such as Australia and Brazil.",
             },
             {
-              label: "Team size",
-              value: "2",
-            },
-          ],
-        },
-        {
-          title: "Landing page",
-          content: [
-            {
-              label: "Technologies",
               value:
-                "Reactjs, Typescript,  MUI and  push register data to google sheet",
+                "Ensure adherence to coding standards and best practices, fostering a collaborative environment for feedback and improvement, which enhanced code quality, maintainability, and scalability.",
             },
             {
-              label: "Responsibilities",
               value:
-                "design, develop, responsive web design, test landing page for each CMS project",
-            },
-            {
-              label: "Team size",
-              value: "1",
+                "Implemented code optimizations by analyzing performance bottlenecks and refactoring critical components, using techniques like code splitting and lazy loading to reduce load times and improve responsiveness, resulting in a smoother user experience and decreased resource consumption.",
             },
           ],
         },
@@ -147,80 +165,22 @@ const Experience = (props: Props) => {
     {
       companyName: "VTI ACADEMY",
       location: "Ha Noi",
-      startTime: "07/2023",
-      endTime: "now",
-      position: "Mentor (part time)",
+      time: "07/2023 - 02/2024",
+      position: "Mentor",
       projects: [
         {
-          title:
-            "Instructor of basic and advanced web programming (HTML5, CSS3, JS) and Reactjs course",
-        },
-        {
-          title:
-            "Build Node server with Express Js framework to serve front-end course",
-        },
-      ],
-    },
-    {
-      companyName: "FRESHDI",
-      location: "Ha Noi",
-      startTime: "07/2021",
-      endTime: "07/2023",
-      position: "Full Stack (full time)",
-      projects: [
-        {
-          title:
-            "Freshdi app project, Freshdi business: sales management software for businesses",
           content: [
             {
-              label: "Technologies",
               value:
-                "Reactjs, Typescript, MUI, Redux, Websocket for Front-end. Frappe, Mariadb. Firebase for Back-end",
+                "Instructor for both basic and advanced web programming courses, covering topics like HTML5, CSS3, JavaScript, and ReactJS.",
             },
             {
-              label: "Responsibilities",
               value:
-                "write api for Freshdi app and business. Build interface, responsive web design, fix bugs, optimize Freshdi business performance",
+                "Provided personalized mentorship, giving students feedback on coding assignments, and guiding them through debugging and problem-solving techniques.",
             },
             {
-              label: "Team size",
-              value: "5",
-            },
-            {
-              label: "Demo link",
-              value: (
-                <Link href="https://business.freshdi.com">
-                  https://business.freshdi.com
-                </Link>
-              ),
-            },
-          ],
-        },
-        {
-          title:
-            "Freshdi trace: ordering software, product traceability for users",
-          content: [
-            {
-              label: "Technologies",
               value:
-                "Reactjs, Typescript, MUI, Redux, Vnpay, websocket for Front-end. Frappe, Mariadb, Firebase for Back-end",
-            },
-            {
-              label: "Responsibilities",
-              value:
-                "responsive web design, build interface, fix bugs, optimize Freshdi Trace performance",
-            },
-            {
-              label: "Team size",
-              value: "5",
-            },
-            {
-              label: "Demo link",
-              value: (
-                <Link href="https://freshdi.com/Thit-Bo-Nong-Cong">
-                  https://freshdi.com/Thit-Bo-Nong-Cong
-                </Link>
-              ),
+                "Developed a Node.js server using the ExpressJS framework to provide real-time API services and backend support for the front-end course projects.",
             },
           ],
         },
@@ -229,9 +189,8 @@ const Experience = (props: Props) => {
     {
       companyName: "UET UNITED",
       location: "Ha Noi",
-      startTime: "08/2020",
-      endTime: "10/2020",
-      position: "Intern AI (part-time)",
+      time: "07/2023 - PRESENT",
+      position: "AI Intern",
       projects: [
         {
           title: "Adult detection: Web detects images containing banned images",
@@ -265,9 +224,8 @@ const Experience = (props: Props) => {
     {
       companyName: "MISA",
       location: "Ha Noi",
-      startTime: "06/2020",
-      endTime: "08/2020",
-      position: "Intern web (part-time)",
+      time: "06/2020 - 08/2020",
+      position: "Front-end Intern",
       projects: [
         {
           title: "Cukcuk: sales management software",
@@ -301,17 +259,12 @@ const Experience = (props: Props) => {
 
           <StyledStepper orientation="vertical">
             {experiences.map((experience, i) => {
-              let { startTime, endTime, companyName, location, projects } =
-                experience;
+              let { time, companyName, location, projects } = experience;
 
               return (
                 <Step key={i} active expanded>
                   <StepLabel
-                    StepIconComponent={() => (
-                      <StepIconComponent
-                        time={startTime && `${startTime} - ${endTime}`}
-                      />
-                    )}
+                    StepIconComponent={() => <StepIconComponent time={time} />}
                   >
                     <Typography className="position_text">
                       {experience.position}
@@ -321,31 +274,42 @@ const Experience = (props: Props) => {
                   <StepContent>
                     <Row>
                       {companyName && (
-                        <Typography className="company">
+                        <Row spacing={1} className="company">
                           <HiBuildingOffice />
-                          {companyName}
-                        </Typography>
+                          <Typography>{companyName}</Typography>
+                        </Row>
                       )}
                       {location && (
-                        <Typography className="location">
+                        <Row spacing={1} className="location">
                           <MdLocationOn />
-                          {location}
-                        </Typography>
+                          <Typography>{location}</Typography>
+                        </Row>
                       )}
                     </Row>
+                    {isSmall && (
+                      <Typography className="time-text" mt={1}>
+                        {time}
+                      </Typography>
+                    )}
 
                     <Stack spacing={1} mt={1}>
                       {projects.map((project, ii) => (
                         <Box key={ii}>
-                          <Typography className="project_title">
-                            {project.title}
-                          </Typography>
+                          {project.title && (
+                            <Typography className="project_title">
+                              {project.title}
+                            </Typography>
+                          )}
 
                           <Stack>
                             {project.content &&
                               project.content.map((content, iii) => (
                                 <Typography key={iii}>
-                                  - {content.label}: {content.value}
+                                  <GoDotFill
+                                    style={{ display: "inline-block" }}
+                                  />
+                                  {content.label && ` ${content.label}:`}{" "}
+                                  {content.value}
                                 </Typography>
                               ))}
                           </Stack>
@@ -370,9 +334,14 @@ const StyledStepper = styled(Stepper)(({ theme }) => ({
     fontSize: 18,
     fontWeight: 700,
   },
+  ".time-text": {
+    fontSize: 12,
+  },
   ".company, .location": {
-    display: "flex",
-    gap: 8,
+    width: "fit-content",
+    "p, svg": {
+      color: "#fff",
+    },
   },
   ".project_title": {
     fontWeight: 700,
@@ -383,7 +352,7 @@ const StyledStepper = styled(Stepper)(({ theme }) => ({
   },
 
   [theme.breakpoints.down("md")]: {
-    padding: "0 0 0 56px",
+    padding: 0,
     ".MuiStepContent-root, .MuiStepConnector-root": {
       marginLeft: 8,
     },
@@ -404,9 +373,11 @@ const StepIconComponent = styled("div")<{ time?: string }>(
 
     "&::after": {
       content: `"${time}"`,
+      minWidth: 124,
+      maxWidth: 148,
       display: "block",
       position: "absolute",
-      left: -64,
+      left: -74,
       color: "#fff",
       padding: time ? "2px 18px 2px 8px" : 0,
       backgroundColor: "var(--app-bg1)",
@@ -414,13 +385,14 @@ const StepIconComponent = styled("div")<{ time?: string }>(
         "polygon( 0% 0%, calc(100% - 12px) 0%, 100% 50%, calc(100% - 12px) 100%, 0% 100%)",
       fontSize: 10,
       transform: "translateX(-50%)",
-      whiteSpace: "nowrap",
+      // whiteSpace: "nowrap",
     },
 
     [theme.breakpoints.down("md")]: {
       width: 16,
       height: 16,
       "&::after": {
+        display: "none",
         top: "-50%",
         fontSize: 8,
         left: -32,

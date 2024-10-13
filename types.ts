@@ -57,16 +57,15 @@ export type SocialMediaType = {
 export type ExperienceType = {
   companyName?: string;
   location?: string;
-  startTime?: string;
-  endTime?: string;
+  time?: string;
   position: string;
   projects: ExperienceProject[];
 };
 
 export type ExperienceProject = {
-  title: string | ReactNode;
+  title?: string | ReactNode;
   content?: {
-    label: string;
+    label?: string;
     value: string | ReactNode;
   }[];
 };

@@ -2,8 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['api.openweathermap.org'],
+    domains: ["api.openweathermap.org"],
   },
-}
+  i18n: {
+    locales: ["en", "vi"],
+    defaultLocale: "en",
+    localeDetection: true,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
