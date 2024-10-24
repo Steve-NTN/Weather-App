@@ -27,7 +27,7 @@ const Products = (props: Props) => {
                 key={id}
                 onClick={() => onClickProduct(product)}
               >
-                <img src={img} className="img" />
+                <img src={img} className="img" alt="img"/>
                 <div className="content">
                   <p className="name">{name}</p>
                   <p className="desc mt-2">{description}</p>
