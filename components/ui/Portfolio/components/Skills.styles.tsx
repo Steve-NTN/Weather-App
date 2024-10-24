@@ -1,4 +1,5 @@
 import { Container, styled } from "@mui/material";
+import { motion } from "framer-motion";
 
 export const StyledContainer = styled(Container)({
   "& .block_label": {
@@ -54,3 +55,13 @@ export const StyledContainer = styled(Container)({
     color: "#fff",
   },
 });
+
+export const TechBox = styled(motion.div)(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  transition: 'transform 0.2s',
+  '&:hover': {
+    transform: 'scale(1.05)',
+  },
+}));

@@ -7,12 +7,14 @@ import {
   styled,
 } from "@mui/material";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import React from "react";
+import React, { ReactNode } from "react";
 import Link from "next/link";
+import { Trans, useTranslation } from "react-i18next";
 
 type Props = {};
 
 const About = (props: Props) => {
+  const { t } = useTranslation();
   const onClickContact = () => {
     let section = document.getElementById("contact");
     window?.scrollTo({
@@ -22,7 +24,7 @@ const About = (props: Props) => {
   };
 
   return (
-    <div className="section bg-[var(--app-bg2)]" id="about">
+    <StyledAbout className="section bg-[var(--app-bg2)]" id="about">
       <Container maxWidth="xl">
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
@@ -30,26 +32,38 @@ const About = (props: Props) => {
           </Grid>
 
           <Grid item xs={12} md={6}>
-            <Typography className="cv-title">About me</Typography>
+            <Typography className="cv-title">{t("about_me")}</Typography>
 
-            <Typography className="text-white">
-              I studied at{" "}
-              <b>
-                <Link href="https://uet.vnu.edu.vn/">
-                  UNIVERSITY OF ENGINEERING AND TECHNOLOGY (UET-VNU)
-                </Link>
-              </b>{" "}
-              majoring in computer science from 2017 to 2021.
+            <Typography className="description">
+              {t("portfolio_about_description_1")}
             </Typography>
 
-            <Typography mt={2} className="text-white text-justify">
-              Skilled Front-End Developer with over 3 years of experience
-              building high- performance web apps. Proficient in JavaScript,
-              React, NextJS, and modern front-end technologies. Expert in
-              creating responsive, accessible, and user-friendly interfaces,
-              with a focus on best practices, performance optimization, and
-              teamwork to deliver scalable solutions. Additionally experienced
-              in developing APIs with ExpressJS, Django, and Flask.
+            <Typography className="description">
+              <Trans
+                i18nKey="portfolio_about_description_2"
+                components={{ span: <span /> }}
+              />
+            </Typography>
+
+            <Typography className="description">
+              <Trans
+                i18nKey="portfolio_about_description_3"
+                components={{ span: <span /> }}
+              />
+            </Typography>
+
+            <Typography className="description">
+              <Trans
+                i18nKey="portfolio_about_description_4"
+                components={{ span: <span /> }}
+              />
+            </Typography>
+
+            <Typography className="description">
+              <Trans
+                i18nKey="portfolio_about_description_5"
+                components={{ span: <span /> }}
+              />
             </Typography>
 
             <StyledButton
@@ -57,12 +71,12 @@ const About = (props: Props) => {
               endIcon={<AiOutlineArrowRight />}
               onClick={onClickContact}
             >
-              Contact me
+              {t("contact_me")}
             </StyledButton>
           </Grid>
         </Grid>
       </Container>
-    </div>
+    </StyledAbout>
   );
 };
 
@@ -90,6 +104,16 @@ const StyledButton = styled(Button)({
   borderRadius: 32,
   fontWeight: 600,
   fontSize: 18,
+});
+
+const StyledAbout = styled("div")({
+  ".description": {
+    color: "#fff",
+    marginTop: 16,
+    span: {
+      fontWeight: 600,
+    },
+  },
 });
 
 export default About;

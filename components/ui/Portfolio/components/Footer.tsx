@@ -1,10 +1,12 @@
 import { Container, IconButton, Typography, styled } from "@mui/material";
 import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { AiOutlineArrowUp } from "react-icons/ai";
 
 type Props = {};
 
 const Footer = (props: Props) => {
+  const { t } = useTranslation();
   const onClickScrollTop = () => {
     window.scrollTo({ behavior: "smooth", top: 80 });
   };
@@ -27,7 +29,7 @@ const Footer = (props: Props) => {
     <StyledFooter className="section">
       <Typography className="author">Steve Nguyen</Typography>
       <Container>
-        <Typography align="center">{'"Thanks for scrolling"'}</Typography>
+        <Typography align="center">"{t("thanks_for_scrolling")}"</Typography>
       </Container>
 
       <StyledScrollTopBtn onClick={onClickScrollTop} id="scroll_top_btn">
@@ -37,7 +39,7 @@ const Footer = (props: Props) => {
   );
 };
 
-const StyledFooter = styled("div")(({theme}) => ({
+const StyledFooter = styled("div")(({ theme }) => ({
   backgroundColor: "var(--app-bg1)",
   borderTop: "2px solid var(--app-color)",
   position: "relative",
@@ -57,11 +59,11 @@ const StyledFooter = styled("div")(({theme}) => ({
     margin: "0 auto",
   },
 
-  [theme.breakpoints.down('md')]: {
+  [theme.breakpoints.down("md")]: {
     p: {
-      fontSize: 18
-    }
-  }
+      fontSize: 18,
+    },
+  },
 }));
 
 const StyledScrollTopBtn = styled(IconButton)({

@@ -14,7 +14,7 @@ import Link from "next/link";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import Row from "@/components/Row";
 import { saveFile } from "@/utils/fileHelpers";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 type Props = {};
 
@@ -24,6 +24,7 @@ const ROLES = {
 };
 
 const Home = (props: Props) => {
+  const { t } = useTranslation();
   const [socialMedias] = useState<SocialMediaType[]>([
     { icon: FaFacebookF, link: "https://www.facebook.com/nghiaDev47/" },
     { icon: FaLinkedinIn, link: "https://www.linkedin.com/in/ntn-dev/" },
@@ -44,12 +45,12 @@ const Home = (props: Props) => {
         <Grid container spacing={4}>
           <Grid item xs={12} md={7}>
             <LeftInforBar spacing={2}>
-              <Typography className="title1 font-bold">Hi</Typography>
+              <Typography className="title1 font-bold">{t("hi")}</Typography>
               <Typography className="title2 font-bold">
-                {"I'm Steve Nguyen"}
+                {t('im_steve_nguyen')}
               </Typography>
               <Box className="title1 font-bold">
-                And I am a
+                {t("and_i_am_a")}
                 <Typewriter
                   onInit={(typewriter) => {
                     typewriter
@@ -68,12 +69,7 @@ const Home = (props: Props) => {
               </Box>
 
               <Typography className="text" align="justify">
-                Skilled full stack web developer. Ability to learn and implement
-                new technologies quickly. With more than 2 years of experience
-                in Front-end (reactjs, typescript, MUI, ant design, tailwind,
-                bootstrap, sass, redux, ...) and about 1 year in Back-end
-                (nextjs, express, django, frappe, Flask, spring boot) + database
-                (mysql, postgresql, mongodb,...).
+                {t("portfolio_description")}
               </Typography>
 
               <Stack spacing={2}>
@@ -92,10 +88,9 @@ const Home = (props: Props) => {
                     endIcon={<AiOutlineArrowRight />}
                     onClick={onDownloadCV}
                   >
-                    Download CV
+                    {t("download_cv")}
                   </DownloadButton>
                 </Row>
-                <h1>{t("welcome")}</h1>
               </Stack>
             </LeftInforBar>
           </Grid>

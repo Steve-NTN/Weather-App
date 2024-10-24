@@ -1,18 +1,28 @@
+// i18n.js
+"use client"; // Required for client-side use
+
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import HttpBackend from "i18next-http-backend";
+
+// Import translation files
+import enTranslation from "./public/locales/en/translation.json";
+import viTranslation from "./public/locales/vi/translation.json";
 
 i18n
-  .use(HttpBackend) // Add the backend plugin to load translations
-  .use(initReactI18next) // Pass i18n to react-i18next
+  .use(initReactI18next) // Passes i18n down to react-i18next
   .init({
-    lng: "en", // default language
-    fallbackLng: "en", // fallback language if the translation key is missing
-    interpolation: {
-      escapeValue: false, // React already does escaping
+    resources: {
+      en: {
+        translation: enTranslation,
+      },
+      vi: {
+        translation: viTranslation,
+      },
     },
-    backend: {
-      loadPath: "/locales/{{lng}}/translation.json", // Path to translation files in the public folder
+    lng: "en", // Default language
+    fallbackLng: "en", // Fallback language if translation is missing
+    interpolation: {
+      escapeValue: false, // React already escapes by default
     },
   });
 

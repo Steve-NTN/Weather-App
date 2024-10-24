@@ -5,16 +5,18 @@ import { BiMenu } from "react-icons/bi";
 import { StyledHeader, StyledOption } from "./Header.styles";
 import { Container, Typography } from "@mui/material";
 import Row from "@/components/Row";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 type Props = {};
 
 const Header = (props: Props) => {
   const [options] = useState<HeaderOptionType[]>([
-    { label: "Home", id: "home" },
-    { label: "About", id: "about" },
-    { label: "Technologies", id: "skills" },
-    { label: "Experience", id: "experience" },
-    { label: "Contact", id: "contact" },
+    { label: "home", id: "home" },
+    { label: "about", id: "about" },
+    { label: "technologies", id: "skills" },
+    { label: "experience", id: "experience" },
+    { label: "contact", id: "contact" },
   ]);
   const [showMobileOptions, setshowMobileOptions] = useState(false);
   const [hash, setHash] = useState<string>("home");
@@ -44,6 +46,7 @@ const Header = (props: Props) => {
 
           <div className="flex items-center gap-4">
             <div className="gap-4 hidden md:flex">
+              <LanguageSwitcher />
               <Options {...{ options, hash, onClickOption }} />
             </div>
             <button
@@ -63,6 +66,7 @@ const Header = (props: Props) => {
       >
         <div className="p-4">
           <Options {...{ options, hash, onClickOption }} ismobile />
+          <LanguageSwitcher className="mt-2" />
         </div>
       </Drawer>
     </StyledHeader>
@@ -80,6 +84,8 @@ const Options = ({
   onClickOption?: any;
   hash?: string;
 }) => {
+  const { t } = useTranslation();
+
   return (
     <>
       {options.map((option) => {
@@ -98,7 +104,7 @@ const Options = ({
             } font-bold cursor-pointer ${ismobile ? "mb-4" : ""}`}
             onClick={() => onClickOption(id)}
           >
-            {label}
+            {t(label)}
           </StyledOption>
         );
       })}

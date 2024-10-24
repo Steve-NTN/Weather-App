@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { useLoading } from "@/providers/LoadingProvider";
 import useEmail from "@/hooks/useEmail";
 import { useNotify } from "@/providers/NotifyProvider";
+import { useTranslation } from "react-i18next";
 
 type Props = {};
 
@@ -18,6 +19,7 @@ const Contact = (props: Props) => {
   const { setLoading } = useLoading();
   const { sendEmail } = useEmail();
   const { setNotify } = useNotify();
+  const { t } = useTranslation();
 
   const onHandleSubmit = async (data: any) => {
     setLoading(true);
@@ -42,13 +44,15 @@ const Contact = (props: Props) => {
       <StyledContainer maxWidth="sm" className="items-center">
         <form onSubmit={handleSubmit(onHandleSubmit)}>
           <Stack spacing={2} p={{ xs: 0, md: 4 }} width="100%">
-            <Typography className="cv-title text-center">Contact me</Typography>
+            <Typography className="cv-title text-center">
+              {t("contact_me")}
+            </Typography>
             <Stack spacing={1}>
               <Typography className="cv-input-label pl-4">
-                Fullname *
+                {t("fullname")} *
               </Typography>
               <TextField
-                placeholder="Enter your fullname"
+                placeholder={t("enter_your_value", { value: t("fullname") })}
                 {...register("fullname", {
                   required: {
                     value: true,
@@ -61,9 +65,11 @@ const Contact = (props: Props) => {
             </Stack>
 
             <Stack spacing={1}>
-              <Typography className="cv-input-label pl-4">Email *</Typography>
+              <Typography className="cv-input-label pl-4">
+                {t("email")} *
+              </Typography>
               <TextField
-                placeholder="Enter your email"
+                placeholder={t("enter_your_value", { value: t("email") })}
                 {...register("email", {
                   required: {
                     value: true,
@@ -76,9 +82,11 @@ const Contact = (props: Props) => {
             </Stack>
 
             <Stack spacing={1}>
-              <Typography className="cv-input-label pl-4">Message</Typography>
+              <Typography className="cv-input-label pl-4">
+                {t("message")}
+              </Typography>
               <TextField
-                placeholder="Enter your message"
+                placeholder={t("enter_your_value", { value: t("message") })}
                 multiline
                 rows={4}
                 {...register("message")}
@@ -86,7 +94,7 @@ const Contact = (props: Props) => {
             </Stack>
 
             <AppButton type="submit" className="confirm_btn">
-              Send
+              {t("send")}
             </AppButton>
           </Stack>
         </form>

@@ -17,122 +17,39 @@ import React from "react";
 import { ExperienceType } from "@/types";
 import useBreakpoints from "@/hooks/useBreakpoint";
 import { GoDotFill } from "react-icons/go";
+import { useTranslation } from "react-i18next";
 
 type Props = {};
 
 const Experience = (props: Props) => {
+  const { t } = useTranslation();
   const { isSmall } = useBreakpoints();
   const experiences: ExperienceType[] = [
-    // {
-    //   position: "Personal project",
-    //   projects: [
-    //     {
-    //       title: "Portfolio website",
-    //       content: [
-    //         {
-    //           label: "Technologies",
-    //           value:
-    //             "NextJs, TailwindCss, MUI, Typescript, Redux toolkit, Emailjs for Front-end",
-    //         },
-    //         {
-    //           label: "Responsibilities",
-    //           value: "develop UI, responsive web design, testing, fix bugs",
-    //         },
-    //         {
-    //           label: "Demo link",
-    //           value: (
-    //             <Link href="https://ntn-app.vercel.app/portfolio">
-    //               https://ntn-app.vercel.app/portfolio
-    //             </Link>
-    //           ),
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: "Ecommerce website",
-    //       content: [
-    //         {
-    //           label: "Technologies",
-    //           value:
-    //             "NextJs, Prisma, MongoDB, JWT for Back-end. MUI, TailwindCss, Typescript, Redux toolkit",
-    //         },
-    //         {
-    //           label: "Responsibilities",
-    //           value:
-    //             "create user, product DB, write api, develop home, login, register, cart UI, responsive web design, testing, fix bugs",
-    //         },
-    //         {
-    //           label: "Demo link",
-    //           value: (
-    //             <Link href="https://ntn-app.vercel.app/store">
-    //               https://ntn-app.vercel.app/store
-    //             </Link>
-    //           ),
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: "Account management app",
-    //       content: [
-    //         {
-    //           label: "Technologies",
-    //           value:
-    //             "Expressjs, Jwt, Mysql, Swagger for Back-end. Reactjs, Typescript, Styled-components for Front-end",
-    //         },
-    //         {
-    //           label: "Responsibilities",
-    //           value:
-    //             "build DB for the project, write api. Build project interface, responsive web design, fix bugs",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: (
-    //         <>
-    //           Other projects: landing page for NEU (Reactjs, MUI, demo:{" "}
-    //           <Link href="https://socialpioneersmarketingneu.com">
-    //             https://socialpioneersmarketingneu.com
-    //           </Link>
-    //           ), barcode scanning (Tkinter, Mysql), todo app (Nextjs,
-    //           Bootstrap), wine store (Django and Reactjs),...,
-    //         </>
-    //       ),
-    //     },
-    //   ],
-    // },
     {
       companyName: "FRESHDI",
       location: "Ha Noi",
-      time: "07/2021 - 07/2023, 10/2024 - PRESENT",
-      position: "Full stack developer",
+      time: "experience_freshdi_time",
+      position: "experience_freshdi_position",
       projects: [
         {
-          // title:
-          //   "Freshdi app project, Freshdi business: sales management software for businesses",
           content: [
             {
-              value:
-                "Lead the development of scalable web applications using React, MUI, Redux and TypeScript to build a global marketplace to help buyers and suppliers connect with each other.",
+              value: "experience_freshdi_project_1",
             },
             {
-              value:
-                "Collaborated closely with UX/UI designers and backend teams to develop user-friendly, responsive, and scalable web applications.",
+              value: "experience_freshdi_project_2",
             },
             {
-              value:
-                "Optimized the performance of web applications through code splitting, lazy loading, and efficient state management.",
+              value: "experience_freshdi_project_3",
             },
             {
-              value:
-                "Reviews code to ensure adherence to best practices and maintain code quality.",
+              value: "experience_freshdi_project_4",
             },
             {
-              value:
-                "Work closely with backend teams to integrate APIs, ensuring seamless data flow between frontend and backend services.",
+              value: "experience_freshdi_project_5",
             },
             {
-              value:
-                "Enhanced the website's SEO through keyword optimization and technical improvements, leading to increased organic traffic and better Google indexing.",
+              value: "experience_freshdi_project_6",
             },
           ],
         },
@@ -141,22 +58,19 @@ const Experience = (props: Props) => {
     {
       companyName: "Phoenixunity",
       location: "Ha Noi",
-      time: "10/2023 - 10/2024",
-      position: "Front-end developer",
+      time: "experience_phoenixunity_time",
+      position: "experience_phoenixunity_position",
       projects: [
         {
           content: [
             {
-              value:
-                "Utilized technologies such as ReactJS, Ant Design, Tailwind css, Redux and NextJS across various projects for foreign partners such as Australia and Brazil.",
+              value: "experience_phoenixunity_project_1",
             },
             {
-              value:
-                "Ensure adherence to coding standards and best practices, fostering a collaborative environment for feedback and improvement, which enhanced code quality, maintainability, and scalability.",
+              value: "experience_phoenixunity_project_2",
             },
             {
-              value:
-                "Implemented code optimizations by analyzing performance bottlenecks and refactoring critical components, using techniques like code splitting and lazy loading to reduce load times and improve responsiveness, resulting in a smoother user experience and decreased resource consumption.",
+              value: "experience_phoenixunity_project_3",
             },
           ],
         },
@@ -165,22 +79,19 @@ const Experience = (props: Props) => {
     {
       companyName: "VTI ACADEMY",
       location: "Ha Noi",
-      time: "07/2023 - 02/2024",
-      position: "Mentor",
+      time: "experience_vtiacademy_time",
+      position: "experience_vtiacademy_position",
       projects: [
         {
           content: [
             {
-              value:
-                "Instructor for both basic and advanced web programming courses, covering topics like HTML5, CSS3, JavaScript, and ReactJS.",
+              value: "experience_vtiacademy_project_1",
             },
             {
-              value:
-                "Provided personalized mentorship, giving students feedback on coding assignments, and guiding them through debugging and problem-solving techniques.",
+              value: "experience_vtiacademy_project_2",
             },
             {
-              value:
-                "Developed a Node.js server using the ExpressJS framework to provide real-time API services and backend support for the front-end course projects.",
+              value: "experience_vtiacademy_project_3",
             },
           ],
         },
@@ -189,33 +100,27 @@ const Experience = (props: Props) => {
     {
       companyName: "UET UNITED",
       location: "Ha Noi",
-      time: "07/2023 - PRESENT",
-      position: "AI Intern",
+      time: "experience_uetunited_time",
+      position: "experience_uetunited_position",
       projects: [
         {
-          title: "Adult detection: Web detects images containing banned images",
+          title: "experience_uetunited_project_title",
           content: [
             {
-              label: "Technologies",
-              value:
-                "Pytorch, Convolutional network CNN for training model, Scrapy for crawling data. Flask,  Bootstrap,  Jquery,  Redis for building web application",
+              label: "experience_uetunited_project_technologies",
+              value: "experience_uetunited_project_technologies_value",
             },
             {
-              label: "Responsibilities",
-              value:
-                "write bot to crawl data, put data into model training and build image recognition web",
+              label: "experience_uetunited_project_responsibilities",
+              value: "experience_uetunited_project_responsibilities_value",
             },
             {
-              label: "Team size",
-              value: "1",
+              label: "experience_uetunited_project_team_size",
+              value: "experience_uetunited_project_team_size_value",
             },
             {
-              label: "Github link",
-              value: (
-                <Link href="https://github.com/anhnghia47/Adultdetection">
-                  https://github.com/anhnghia47/Adultdetection
-                </Link>
-              ),
+              label: "experience_uetunited_project_github",
+              value: "experience_uetunited_project_github_value",
             },
           ],
         },
@@ -224,24 +129,23 @@ const Experience = (props: Props) => {
     {
       companyName: "MISA",
       location: "Ha Noi",
-      time: "06/2020 - 08/2020",
-      position: "Front-end Intern",
+      time: "experience_misa_time",
+      position: "experience_misa_position",
       projects: [
         {
-          title: "Cukcuk: sales management software",
+          title: "experience_misa_project_title",
           content: [
             {
-              label: "Technologies",
-              value:
-                ".NET, Entity framework (C#), Sql server for Back-end and Javascript, Css3 for Front-end",
+              label: "experience_misa_project_technologies",
+              value: "experience_misa_project_technologies_value",
             },
             {
-              label: "Responsibilities",
-              value: "build customer management features interface",
+              label: "experience_misa_project_responsibilities",
+              value: "experience_misa_project_responsibilities_value",
             },
             {
-              label: "Team size",
-              value: "1",
+              label: "experience_misa_project_team_size",
+              value: "experience_misa_project_team_size_value",
             },
           ],
         },
@@ -254,7 +158,7 @@ const Experience = (props: Props) => {
       <Container maxWidth="xl">
         <Stack spacing={2} width="100%">
           <Typography className="cv-title" align="center">
-            Experience
+            {t("experience")}
           </Typography>
 
           <StyledStepper orientation="vertical">
@@ -264,10 +168,12 @@ const Experience = (props: Props) => {
               return (
                 <Step key={i} active expanded>
                   <StepLabel
-                    StepIconComponent={() => <StepIconComponent time={time} />}
+                    StepIconComponent={() => (
+                      <StepIconComponent time={time && t(time)} />
+                    )}
                   >
                     <Typography className="position_text">
-                      {experience.position}
+                      {t(experience.position)}
                     </Typography>
                   </StepLabel>
 
@@ -288,7 +194,7 @@ const Experience = (props: Props) => {
                     </Row>
                     {isSmall && (
                       <Typography className="time-text" mt={1}>
-                        {time}
+                        {time && t(time)}
                       </Typography>
                     )}
 
@@ -297,7 +203,7 @@ const Experience = (props: Props) => {
                         <Box key={ii}>
                           {project.title && (
                             <Typography className="project_title">
-                              {project.title}
+                              {String(project.title)}
                             </Typography>
                           )}
 
@@ -308,8 +214,8 @@ const Experience = (props: Props) => {
                                   <GoDotFill
                                     style={{ display: "inline-block" }}
                                   />
-                                  {content.label && ` ${content.label}:`}{" "}
-                                  {content.value}
+                                  {content.label && ` ${t(content.label)}:`}{" "}
+                                  {content.value && t(String(content.value))}
                                 </Typography>
                               ))}
                           </Stack>

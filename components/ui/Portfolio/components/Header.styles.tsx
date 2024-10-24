@@ -1,12 +1,15 @@
 import { Box, styled } from "@mui/material";
 
 export const StyledOption = styled("div")({
-  "&:hover:after, &.selected:after": {
+  "&:after": {
     content: "''",
-    backgroundColor: "var(--app-color)",
     display: "block",
     height: 2,
     marginTop: 4,
+    backgroundColor: "initital",
+  },
+  "&:hover:after, &.selected:after": {
+    backgroundColor: "var(--app-color)",
   },
 });
 
